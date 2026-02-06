@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mt-4">
+    <div class="col-12">
+        <h2>🔎 Результаты поиска: <span class="text-primary">"{{ q }}"</span></h2>
+        <hr>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h4 class="mb-3 text-muted">Сотрудники ({{ employees|length }})</h4>
+        {% if employees %}
+            <div class="list-group">
+            {% for emp in employees %}
+                <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="mb-1">{{ emp.name }}</h5>
+                        <p class="mb-1 text-muted">{{ emp.position }}</p>
+                        {% if emp.parent %}
+                            <small>Руководитель: {{ emp.parent.name }}</small>
+                        {% endif %}
+                    </div>
+                    <span class="badge badge-primary badge-pill">ID: {{ emp.id }}</span>
+                </div>
+            {% endfor %}
+            </div>
+        {% else %}
+            <p>Сотрудников не найдено.</p>
+        {% endif %}
+    </div>
+
+    <div class="col-md-6 mt-4 mt-md-0">
+        <h4 class="mb-3 text-muted">База знаний ({{ articles|length }})</h4>
+        {% if articles %}
+            {% for article in articles %}
+                <div class="card mb-3 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{ article.title }}</h5>
+                        <p class="card-text">
+                            {{ article.content[:100] }}...
+                        </p>
+                        <a href="/wiki" class="btn btn-sm btn-outline-primary">Перейти к базе знаний</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Документов не найдено.</p>
+        {% endif %}
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col text-center">
+        <a href="/" class="btn btn-secondary">Вернуться на главную</a>
+    </div>
+</div>
+{% endblock %}

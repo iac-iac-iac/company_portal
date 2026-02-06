@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="p-5 text-center text-white rounded-3" style="background: var(--primary-gradient); border-radius: 20px; box-shadow: 0 10px 30px rgba(67, 97, 238, 0.3);">
+            <h1 class="display-4 font-weight-bold" style="color: white;">Корпоративный Портал</h1>
+            <p class="lead">Вся структура компании и база знаний в одном месте.</p>
+            <a href="/wiki" class="btn btn-light btn-lg mt-3" style="border-radius: 30px; font-weight: bold; color: var(--primary-color);">
+                <i class="fa fa-book"></i> Перейти к знаниям
+            </a>
+        </div>
+    </div>
+</div>
+
+{% if birthdays %}
+<div class="row justify-content-center mb-5">
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm" style="background: linear-gradient(to right, #fff1eb 0%, #ace0f9 100%);">
+            <div class="card-body text-center">
+                <h4 style="color: #2c3e50;"><i class="fa fa-gift text-danger"></i> Именинники этого месяца</h4>
+                <div class="d-flex justify-content-center flex-wrap mt-3">
+                    {% for b in birthdays %}
+                        <div class="m-2 p-2 bg-white rounded shadow-sm" style="min-width: 200px;">
+                            <span class="d-block font-weight-bold">{{ b.name }}</span>
+                            <small class="text-muted">{{ b.position }}</small>
+                            <div class="text-primary font-weight-bold mt-1">
+                                {{ b.birthday.strftime('%d.%m') }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% macro render_tree(employee) %}
+    <li>
+        <div class="tree-card">
+            <span class="name">{{ employee.name }}</span>
+            <span class="pos">{{ employee.position }}</span>
+        </div>
+        
+        {% if employee.children %}
+            <ul class="{{ 'grid-view' if employee.children|length > 8 else '' }}">
+                {% for child in employee.children %}
+                    {{ render_tree(child) }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
+{% endmacro %}
+
+<div class="tree-container">
+    <div class="tree">
+        <ul>
+            {% for root in roots %}
+                {{ render_tree(root) }}
+            {% else %}
+                <div class="alert alert-warning">
+                    Сотрудники не найдены. <a href="/admin">Добавьте их в админке</a> (у самых главных оставьте поле Руководитель пустым).
+                </div>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
