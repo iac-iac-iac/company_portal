@@ -16,8 +16,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///company.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # --- НАСТРОЙКИ TELEGRAM (ВСТАВЬ СВОИ ДАННЫЕ!) ---
-TG_BOT_TOKEN = '8478929584:AAGKkC36P-8bXVdthCGSaCdfR5QwD0Ma9zk'  # Например: '54321:AAFx...'
-TG_CHAT_ID = '781436934'              # Например: '123456' или '-100...'
+TG_BOT_TOKEN = ''  # Например: '54321:AAFx...'
+TG_CHAT_ID = ''              # Например: '123456' или '-100...'
 
 # НАСТРОЙКИ ПАРОЛЯ АДМИНКИ
 app.config['BASIC_AUTH_USERNAME'] = 'admin'
@@ -201,4 +201,5 @@ def feedback():
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
+
     app.run(debug=True, host='0.0.0.0', port=5000)
