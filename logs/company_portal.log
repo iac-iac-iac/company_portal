@@ -1,0 +1,81 @@
+[2026-02-09 11:22:51,412] INFO in logger: ==================================================
+[2026-02-09 11:22:51,413] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 11:22:51,414] INFO in logger: ==================================================
+[2026-02-09 11:22:54,876] INFO in logger: ==================================================
+[2026-02-09 11:22:54,879] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 11:22:54,881] INFO in logger: ==================================================
+[2026-02-09 11:27:26,805] INFO in logger: ==================================================
+[2026-02-09 11:27:26,807] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 11:27:26,808] INFO in logger: ==================================================
+[2026-02-09 11:27:33,140] INFO in logger: ==================================================
+[2026-02-09 11:27:33,141] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 11:27:33,142] INFO in logger: ==================================================
+[2026-02-09 11:27:43,910] INFO in logger: ==================================================
+[2026-02-09 11:27:43,911] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 11:27:43,912] INFO in logger: ==================================================
+[2026-02-09 11:28:06,296] INFO in logger: ==================================================
+[2026-02-09 11:28:06,296] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 11:28:06,298] INFO in logger: ==================================================
+[2026-02-09 11:29:17,172] INFO in logger: ==================================================
+[2026-02-09 11:29:17,173] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 11:29:17,174] INFO in logger: ==================================================
+[2026-02-09 11:29:30,917] ERROR in app: Exception on /feedback [GET]
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 889, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1161, in make_response
+    raise TypeError(
+TypeError: The view function for 'feedback' did not return a valid response. The function either returned None or ended without a return statement.
+[2026-02-09 11:29:30,920] ERROR in app: Internal Server Error (500): 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 889, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1161, in make_response
+    raise TypeError(
+TypeError: The view function for 'feedback' did not return a valid response. The function either returned None or ended without a return statement.
+[2026-02-09 11:29:43,800] ERROR in app: Exception on /feedback [GET]
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 889, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1161, in make_response
+    raise TypeError(
+TypeError: The view function for 'feedback' did not return a valid response. The function either returned None or ended without a return statement.
+[2026-02-09 11:29:43,802] ERROR in app: Internal Server Error (500): 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 889, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1161, in make_response
+    raise TypeError(
+TypeError: The view function for 'feedback' did not return a valid response. The function either returned None or ended without a return statement.
+[2026-02-09 11:34:07,590] INFO in logger: ==================================================
+[2026-02-09 11:34:07,590] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 11:34:07,592] INFO in logger: ==================================================
+[2026-02-09 11:34:19,920] INFO in app: Ќовое обращение от цц: »де€
