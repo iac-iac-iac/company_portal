@@ -25,6 +25,7 @@ load_dotenv()
 # --- КОНФИГУРАЦИЯ ---
 app = Flask(__name__)
 app.config.from_object(Config)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000  # Кэш статики на год
 
 # Создаем папку для загрузок если её нет
 if not os.path.exists(app.config['UPLOAD_FOLDER']):
@@ -54,7 +55,7 @@ login_manager.login_message_category = 'info'
 @login_manager.user_loader
 def load_user(user_id):
     """Загружает пользователя по ID"""
-    return User.query.get(int(user_id))
+    return db.session.get(User, int(user_id))  # НОВЫЙ СПОСОБ (SQLAlchemy 2.0)
 
 
 # --- ФУНКЦИЯ ОТПРАВКИ В TELEGRAM ---

@@ -1368,3 +1368,27 @@ jinja2.exceptions.TemplateNotFound: achievements.html
 [2026-02-09 14:39:28,017] INFO in logger: ==================================================
 [2026-02-09 14:39:28,017] INFO in logger: Company Portal запущен в PRODUCTION режиме
 [2026-02-09 14:39:28,019] INFO in logger: ==================================================
+[2026-02-09 14:44:17,214] INFO in logger: ==================================================
+[2026-02-09 14:44:17,215] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 14:44:17,217] INFO in logger: ==================================================
+[2026-02-09 14:52:49,669] INFO in logger: ==================================================
+[2026-02-09 14:52:49,669] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 14:52:49,670] INFO in logger: ==================================================
+[2026-02-09 14:52:54,042] INFO in app: Page not found (404): http://127.0.0.1:5000/static/webfonts/fa-solid-900.woff2
+[2026-02-09 14:52:54,102] INFO in app: Page not found (404): http://127.0.0.1:5000/static/webfonts/fa-solid-900.ttf
+[2026-02-09 14:53:13,696] INFO in app: Page not found (404): http://127.0.0.1:5000/static/webfonts/fa-solid-900.woff2
+[2026-02-09 14:53:13,756] INFO in app: Page not found (404): http://127.0.0.1:5000/static/webfonts/fa-solid-900.ttf
+[2026-02-09 14:59:38,023] INFO in logger: ==================================================
+[2026-02-09 14:59:38,024] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 14:59:38,025] INFO in logger: ==================================================
+[2026-02-09 15:00:10,208] INFO in app: Page not found (404): http://127.0.0.1:5000/static/webfonts/fa-solid-900.woff2
+[2026-02-09 15:00:10,230] INFO in app: Page not found (404): http://127.0.0.1:5000/static/webfonts/fa-solid-900.ttf
+[2026-02-09 15:00:12,524] INFO in app: Page not found (404): http://127.0.0.1:5000/static/webfonts/fa-solid-900.woff2
+[2026-02-09 15:00:12,540] INFO in app: Page not found (404): http://127.0.0.1:5000/static/webfonts/fa-solid-900.ttf
+[2026-02-09 15:00:32,690] INFO in app: Page not found (404): http://127.0.0.1:5000/static/webfonts/fa-solid-900.woff2
+[2026-02-09 15:00:32,704] INFO in app: Page not found (404): http://127.0.0.1:5000/static/webfonts/fa-solid-900.ttf
+[2026-02-09 15:06:39,016] INFO in logger: ==================================================
+[2026-02-09 15:06:39,017] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 15:06:39,019] INFO in logger: ==================================================
+[2026-02-09 15:06:44,045] INFO in app: Page not found (404): http://127.0.0.1:5000/favicon.ico
+[2026-02-09 15:06:44,056] INFO in app: Page not found (404): http://127.0.0.1:5000/favicon.ico
