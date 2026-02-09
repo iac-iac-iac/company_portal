@@ -230,37 +230,27 @@ class EmployeeView(SecureModelView):
         'position': 'Должность',
         'birthday': 'День Рождения',
         'email': 'Email',
-        'telegram': 'Telegram'  # ИЗМЕНИЛИ
+        'telegram': 'Telegram'
     }
-    column_list = ('name', 'position', 'email', 'telegram',
-                   'birthday', 'manager_id')  # ИЗМЕНИЛИ
-    form_columns = ('name', 'position', 'email', 'telegram',
-                    'manager_id', 'birthday')  # ИЗМЕНИЛИ
+    column_list = ['name', 'position', 'email',
+                   'telegram', 'birthday', 'manager_id']
+    form_columns = ['name', 'position', 'email',
+                    'telegram', 'manager_id', 'birthday']
 
-    # Красивое отображение руководителя
     column_formatters = {
         'manager_id': lambda v, c, m, p: f'{m.parent.name} ({m.parent.position})' if m.parent else 'Нет руководителя'
     }
-
     column_labels['manager_id'] = 'Руководитель'
 
 
 class ArticleView(SecureModelView):
-    column_labels = {'title': 'Заголовок', 'content': 'Текст',
-                     'file_upload': 'Файл', 'file_path': 'Имя файла'}
-    form_extra_fields = {
-        'file_upload': FileUploadField('Загрузить файл',
-                                       base_path=lambda: app.config['UPLOAD_FOLDER'],
-                                       allowed_extensions=list(app.config['ALLOWED_EXTENSIONS']))
+    column_labels = {
+        'title': 'Заголовок',
+        'content': 'Текст',
+        'file_path': 'Имя файла'
     }
-
-    def on_model_change(self, form, model, is_created):
-        if form.file_upload.data:
-            model.file_path = form.file_upload.data.filename
-        super().on_model_change(form, model, is_created)
-
-    column_list = ('title', 'file_path')
-    form_columns = ('title', 'content', 'file_upload')
+    column_list = ['title', 'file_path']
+    form_columns = ['title', 'content']
 
 
 class FeedbackView(SecureModelView):
@@ -268,57 +258,21 @@ class FeedbackView(SecureModelView):
     can_edit = False
     column_searchable_list = ['message', 'sender']
     column_filters = ['category']
-    column_list = ('created_at', 'category', 'sender', 'message')
+    column_list = ['created_at', 'category', 'sender', 'message']
     column_default_sort = ('created_at', True)
 
 
 class UserView(SecureModelView):
     """Управление пользователями"""
-    column_labels = {
-        'username': 'Логин',
-        'employee': 'Сотрудник',
-        'role': 'Роль',
-        'is_active': 'Активен',
-        'created_at': 'Создан',
-        'last_login': 'Последний вход'
-    }
+    column_list = ['username', 'role', 'is_active']
+    form_columns = ['username', 'role', 'is_active']
 
-    column_list = ('username', 'employee', 'role', 'is_active', 'last_login')
-    column_searchable_list = ['username']
-    column_filters = ['role', 'is_active']
-    column_default_sort = ('created_at', True)
-
-    # ИСПРАВЛЕНО: используем form_columns вместо excluded
-    form_columns = ('username', 'employee', 'role', 'is_active')
-
-    # Добавляем описание для формы
-    form_widget_args = {
-        'username': {
-            'placeholder': 'Логин для входа'
-        }
-    }
-
-    # Переопределяем создание записи
     def on_model_change(self, form, model, is_created):
         """При создании устанавливаем дефолтный пароль = логин"""
         if is_created:
-            # Дефолтный пароль = логин (пользователь должен сменить!)
             model.set_password(model.username)
             app.logger.info(f"Создан новый пользователь: {model.username}")
         super().on_model_change(form, model, is_created)
-
-    # Добавляем информацию после создания
-    def after_model_change(self, form, model, is_created):
-        if is_created:
-            # Можно отправить уведомление в Telegram
-            if model.employee:
-                send_telegram(
-                    f"🆕 *Новый пользователь создан*\n\n"
-                    f"👤 Логин: `{model.username}`\n"
-                    f"🔑 Пароль: `{model.username}` _(временный)_\n"
-                    f"👨‍💼 Сотрудник: {model.employee.name}\n\n"
-                    f"⚠️ Попросите пользователя сменить пароль после первого входа!"
-                )
 
 
 admin.add_view(EmployeeView(Employee, db.session, name="Сотрудники"))

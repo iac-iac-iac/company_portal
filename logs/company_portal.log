@@ -775,3 +775,463 @@ Traceback (most recent call last):
     for k, v in flags.items():
                 ^^^^^^^^^^^
 AttributeError: 'tuple' object has no attribute 'items'
+[2026-02-09 12:51:04,807] INFO in logger: ==================================================
+[2026-02-09 12:51:04,808] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:51:04,808] INFO in logger: ==================================================
+[2026-02-09 12:51:12,169] CRITICAL in app: Unhandled exception: 'tuple' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 69, in inner
+    return self._run_view(f, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 369, in _run_view
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 2093, in create_view
+    form = self.create_form()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 1332, in create_form
+    return self._create_form_class(get_form_data(), obj=obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\form\__init__.py", line 22, in __init__
+    super(BaseForm, self).__init__(formdata=formdata, obj=obj, prefix=prefix, **kwargs)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 281, in __init__
+    super().__init__(self._unbound_fields, meta=meta_obj, prefix=prefix)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 49, in __init__
+    field = meta.bind_field(self, unbound_field, options)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\meta.py", line 28, in bind_field
+    return unbound_field.bind(form=form, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 387, in bind
+    return self.field_class(*self.args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 133, in __init__
+    for k, v in flags.items():
+                ^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'items'
+[2026-02-09 12:52:40,067] INFO in logger: ==================================================
+[2026-02-09 12:52:40,068] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:52:40,069] INFO in logger: ==================================================
+[2026-02-09 12:52:45,143] CRITICAL in app: Unhandled exception: 'tuple' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 69, in inner
+    return self._run_view(f, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 369, in _run_view
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 2093, in create_view
+    form = self.create_form()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 1332, in create_form
+    return self._create_form_class(get_form_data(), obj=obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\form\__init__.py", line 22, in __init__
+    super(BaseForm, self).__init__(formdata=formdata, obj=obj, prefix=prefix, **kwargs)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 281, in __init__
+    super().__init__(self._unbound_fields, meta=meta_obj, prefix=prefix)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 49, in __init__
+    field = meta.bind_field(self, unbound_field, options)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\meta.py", line 28, in bind_field
+    return unbound_field.bind(form=form, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 387, in bind
+    return self.field_class(*self.args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 133, in __init__
+    for k, v in flags.items():
+                ^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'items'
+[2026-02-09 12:54:26,841] INFO in logger: ==================================================
+[2026-02-09 12:54:26,842] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:54:26,843] INFO in logger: ==================================================
+[2026-02-09 12:54:37,948] INFO in logger: ==================================================
+[2026-02-09 12:54:37,949] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:54:37,950] INFO in logger: ==================================================
+[2026-02-09 12:54:45,372] INFO in logger: ==================================================
+[2026-02-09 12:54:45,373] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:54:45,374] INFO in logger: ==================================================
+[2026-02-09 12:54:50,546] CRITICAL in app: Unhandled exception: 'tuple' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 69, in inner
+    return self._run_view(f, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 369, in _run_view
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 2093, in create_view
+    form = self.create_form()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 1332, in create_form
+    return self._create_form_class(get_form_data(), obj=obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\form\__init__.py", line 22, in __init__
+    super(BaseForm, self).__init__(formdata=formdata, obj=obj, prefix=prefix, **kwargs)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 281, in __init__
+    super().__init__(self._unbound_fields, meta=meta_obj, prefix=prefix)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 49, in __init__
+    field = meta.bind_field(self, unbound_field, options)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\meta.py", line 28, in bind_field
+    return unbound_field.bind(form=form, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 387, in bind
+    return self.field_class(*self.args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 133, in __init__
+    for k, v in flags.items():
+                ^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'items'
+[2026-02-09 12:55:17,201] INFO in logger: ==================================================
+[2026-02-09 12:55:17,202] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:55:17,203] INFO in logger: ==================================================
+[2026-02-09 12:55:22,179] INFO in logger: ==================================================
+[2026-02-09 12:55:22,180] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:55:22,181] INFO in logger: ==================================================
+[2026-02-09 12:55:27,475] INFO in logger: ==================================================
+[2026-02-09 12:55:27,477] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:55:27,478] INFO in logger: ==================================================
+[2026-02-09 12:55:37,769] CRITICAL in app: Unhandled exception: 'tuple' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 69, in inner
+    return self._run_view(f, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 369, in _run_view
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 2093, in create_view
+    form = self.create_form()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 1332, in create_form
+    return self._create_form_class(get_form_data(), obj=obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\form\__init__.py", line 22, in __init__
+    super(BaseForm, self).__init__(formdata=formdata, obj=obj, prefix=prefix, **kwargs)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 281, in __init__
+    super().__init__(self._unbound_fields, meta=meta_obj, prefix=prefix)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 49, in __init__
+    field = meta.bind_field(self, unbound_field, options)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\meta.py", line 28, in bind_field
+    return unbound_field.bind(form=form, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 387, in bind
+    return self.field_class(*self.args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 133, in __init__
+    for k, v in flags.items():
+                ^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'items'
+[2026-02-09 12:57:03,155] INFO in logger: ==================================================
+[2026-02-09 12:57:03,156] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:57:03,156] INFO in logger: ==================================================
+[2026-02-09 12:57:10,401] CRITICAL in app: Unhandled exception: 'tuple' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 69, in inner
+    return self._run_view(f, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 369, in _run_view
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 2093, in create_view
+    form = self.create_form()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 1332, in create_form
+    return self._create_form_class(get_form_data(), obj=obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\form\__init__.py", line 22, in __init__
+    super(BaseForm, self).__init__(formdata=formdata, obj=obj, prefix=prefix, **kwargs)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 281, in __init__
+    super().__init__(self._unbound_fields, meta=meta_obj, prefix=prefix)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 49, in __init__
+    field = meta.bind_field(self, unbound_field, options)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\meta.py", line 28, in bind_field
+    return unbound_field.bind(form=form, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 387, in bind
+    return self.field_class(*self.args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 133, in __init__
+    for k, v in flags.items():
+                ^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'items'
+[2026-02-09 12:57:13,572] CRITICAL in app: Unhandled exception: 'tuple' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 69, in inner
+    return self._run_view(f, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 369, in _run_view
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 2093, in create_view
+    form = self.create_form()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 1332, in create_form
+    return self._create_form_class(get_form_data(), obj=obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\form\__init__.py", line 22, in __init__
+    super(BaseForm, self).__init__(formdata=formdata, obj=obj, prefix=prefix, **kwargs)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 281, in __init__
+    super().__init__(self._unbound_fields, meta=meta_obj, prefix=prefix)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 49, in __init__
+    field = meta.bind_field(self, unbound_field, options)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\meta.py", line 28, in bind_field
+    return unbound_field.bind(form=form, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 387, in bind
+    return self.field_class(*self.args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 133, in __init__
+    for k, v in flags.items():
+                ^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'items'
+[2026-02-09 12:57:28,340] INFO in logger: ==================================================
+[2026-02-09 12:57:28,342] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:57:28,343] INFO in logger: ==================================================
+[2026-02-09 12:57:32,105] INFO in logger: ==================================================
+[2026-02-09 12:57:32,106] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:57:32,106] INFO in logger: ==================================================
+[2026-02-09 12:57:40,090] INFO in logger: ==================================================
+[2026-02-09 12:57:40,090] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:57:40,092] INFO in logger: ==================================================
+[2026-02-09 12:57:44,435] CRITICAL in app: Unhandled exception: 'tuple' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 69, in inner
+    return self._run_view(f, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 369, in _run_view
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 2093, in create_view
+    form = self.create_form()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 1332, in create_form
+    return self._create_form_class(get_form_data(), obj=obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\form\__init__.py", line 22, in __init__
+    super(BaseForm, self).__init__(formdata=formdata, obj=obj, prefix=prefix, **kwargs)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 281, in __init__
+    super().__init__(self._unbound_fields, meta=meta_obj, prefix=prefix)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 49, in __init__
+    field = meta.bind_field(self, unbound_field, options)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\meta.py", line 28, in bind_field
+    return unbound_field.bind(form=form, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 387, in bind
+    return self.field_class(*self.args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 133, in __init__
+    for k, v in flags.items():
+                ^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'items'
+[2026-02-09 12:59:16,271] INFO in logger: ==================================================
+[2026-02-09 12:59:16,273] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:59:16,280] INFO in logger: ==================================================
+[2026-02-09 12:59:20,851] INFO in logger: ==================================================
+[2026-02-09 12:59:20,851] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:59:20,852] INFO in logger: ==================================================
+[2026-02-09 12:59:24,224] INFO in logger: ==================================================
+[2026-02-09 12:59:24,225] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:59:24,227] INFO in logger: ==================================================
+[2026-02-09 12:59:30,423] INFO in logger: ==================================================
+[2026-02-09 12:59:30,425] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 12:59:30,425] INFO in logger: ==================================================
+[2026-02-09 12:59:36,973] CRITICAL in app: Unhandled exception: 'tuple' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 69, in inner
+    return self._run_view(f, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 369, in _run_view
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 2093, in create_view
+    form = self.create_form()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 1332, in create_form
+    return self._create_form_class(get_form_data(), obj=obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\form\__init__.py", line 22, in __init__
+    super(BaseForm, self).__init__(formdata=formdata, obj=obj, prefix=prefix, **kwargs)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 281, in __init__
+    super().__init__(self._unbound_fields, meta=meta_obj, prefix=prefix)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 49, in __init__
+    field = meta.bind_field(self, unbound_field, options)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\meta.py", line 28, in bind_field
+    return unbound_field.bind(form=form, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 387, in bind
+    return self.field_class(*self.args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 133, in __init__
+    for k, v in flags.items():
+                ^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'items'
+[2026-02-09 12:59:51,143] CRITICAL in app: Unhandled exception: 'tuple' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 69, in inner
+    return self._run_view(f, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 369, in _run_view
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 2149, in edit_view
+    form = self.edit_form(obj=model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 1340, in edit_form
+    return self._edit_form_class(get_form_data(), obj=obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\form\__init__.py", line 22, in __init__
+    super(BaseForm, self).__init__(formdata=formdata, obj=obj, prefix=prefix, **kwargs)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 281, in __init__
+    super().__init__(self._unbound_fields, meta=meta_obj, prefix=prefix)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 49, in __init__
+    field = meta.bind_field(self, unbound_field, options)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\meta.py", line 28, in bind_field
+    return unbound_field.bind(form=form, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 387, in bind
+    return self.field_class(*self.args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 133, in __init__
+    for k, v in flags.items():
+                ^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'items'
+[2026-02-09 13:00:26,425] INFO in logger: ==================================================
+[2026-02-09 13:00:26,427] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:00:26,428] INFO in logger: ==================================================
+[2026-02-09 13:01:39,815] INFO in logger: ==================================================
+[2026-02-09 13:01:39,816] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:01:39,816] INFO in logger: ==================================================
+[2026-02-09 13:01:43,357] INFO in logger: ==================================================
+[2026-02-09 13:01:43,358] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:01:43,360] INFO in logger: ==================================================
+[2026-02-09 13:01:50,278] INFO in logger: ==================================================
+[2026-02-09 13:01:50,279] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:01:50,279] INFO in logger: ==================================================
+[2026-02-09 13:01:55,231] CRITICAL in app: Unhandled exception: 'tuple' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 69, in inner
+    return self._run_view(f, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\base.py", line 369, in _run_view
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 2093, in create_view
+    form = self.create_form()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\model\base.py", line 1332, in create_form
+    return self._create_form_class(get_form_data(), obj=obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 209, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_admin\form\__init__.py", line 22, in __init__
+    super(BaseForm, self).__init__(formdata=formdata, obj=obj, prefix=prefix, **kwargs)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 281, in __init__
+    super().__init__(self._unbound_fields, meta=meta_obj, prefix=prefix)
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\form.py", line 49, in __init__
+    field = meta.bind_field(self, unbound_field, options)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\meta.py", line 28, in bind_field
+    return unbound_field.bind(form=form, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 387, in bind
+    return self.field_class(*self.args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\wtforms\fields\core.py", line 133, in __init__
+    for k, v in flags.items():
+                ^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'items'
