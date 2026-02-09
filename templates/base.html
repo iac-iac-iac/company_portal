@@ -42,11 +42,25 @@
                 <div class="navbar-nav">
                     <a class="nav-link" href="/">Структура</a>
                     <a class="nav-link" href="/wiki">База Знаний</a>
-
                     <a class="nav-link" href="/feedback">📢 Связь</a>
 
+                    {% if current_user.is_authenticated %}
+                    <a class="nav-link" href="/profile">👤 {{ current_user.username }}</a>
+                    <a class="nav-link" href="/logout">🚪 Выход</a>
+                    {% if current_user.role == 'admin' %}
                     <a class="nav-link" href="/admin" target="_blank">⚙️ Админка</a>
+                    {% endif %}
+                    {% else %}
+                    <a class="nav-link" href="/login">🔐 Вход</a>
+                    {% endif %}
+
+                    <!-- Dark Mode Toggle -->
+                    <button class="nav-link" id="darkModeToggle"
+                        style="background: none; border: none; cursor: pointer; padding: 8px 15px;">
+                        🌙
+                    </button>
                 </div>
+
             </div>
         </div>
     </nav>
@@ -61,7 +75,32 @@
 
     <script src="/admin/static/vendor/jquery.min.js" defer></script>
     <script src="/admin/static/bootstrap/bootstrap4/js/bootstrap.min.js" defer></script>
+    <!-- НОВОЕ: Dark Mode Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
 
+            // Проверяем сохраненную тему при загрузке
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.textContent = '☀️';
+            }
+
+            // Переключение темы
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('darkMode', 'enabled');
+                    darkModeToggle.textContent = '☀️';
+                } else {
+                    localStorage.removeItem('darkMode');
+                    darkModeToggle.textContent = '🌙';
+                }
+            });
+        });
+    </script>
 
 </body>
 

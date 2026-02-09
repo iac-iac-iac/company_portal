@@ -1,14 +1,17 @@
 /* --- ПЕРЕМЕННЫЕ (ЦВЕТОВАЯ ПАЛИТРА) --- */
 :root {
-    --primary-color: #4361ee;       /* Яркий синий */
+    --primary-color: #4361ee;
+    /* Яркий синий */
     --primary-gradient: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
-    --bg-color: #f3f4f6;            /* Очень светлый серый фон */
+    --bg-color: #f3f4f6;
+    /* Очень светлый серый фон */
     --card-bg: #ffffff;
     --text-main: #2b2d42;
     --text-muted: #8d99ae;
     --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 20px 40px -10px rgba(67, 97, 238, 0.25);
-    --radius: 16px;                 /* Скругление углов */
+    --radius: 16px;
+    /* Скругление углов */
 }
 
 /* --- ОСНОВНЫЕ НАСТРОЙКИ --- */
@@ -18,30 +21,41 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--text-main);
     line-height: 1.6;
-    padding-top: 80px; /* Отступ для фиксированного меню */
+    padding-top: 80px;
+    /* Отступ для фиксированного меню */
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-weight: 700;
     color: var(--text-main);
-    letter-spacing: -0.5px; /* Чуть плотнее буквы */
+    letter-spacing: -0.5px;
+    /* Чуть плотнее буквы */
 }
 
-a { text-decoration: none !important; }
+a {
+    text-decoration: none !important;
+}
 
 /* --- МЕНЮ (GLASSMORPHISM) - ИСПРАВЛЕННОЕ --- */
 .navbar {
     background: rgba(255, 255, 255, 0.9) !important;
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    padding: 10px 0; /* Чуть компактнее */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    padding: 10px 0;
+    /* Чуть компактнее */
 }
 
 .navbar .container {
     display: flex;
-    align-items: center; /* Строгое выравнивание по центру по вертикали */
-    flex-wrap: nowrap;   /* Запрещаем перенос строк */
+    align-items: center;
+    /* Строгое выравнивание по центру по вертикали */
+    flex-wrap: nowrap;
+    /* Запрещаем перенос строк */
 }
 
 .navbar-brand {
@@ -60,15 +74,19 @@ a { text-decoration: none !important; }
     align-items: center;
     width: auto;
     flex-basis: auto;
-    flex-grow: 1; /* Занимает всё доступное место */
+    flex-grow: 1;
+    /* Занимает всё доступное место */
 }
 
 /* Настройки ссылок меню */
 .navbar-nav {
-    flex-direction: row !important; /* Всегда в строку */
-    margin-left: auto; /* Прижимаем вправо */
+    flex-direction: row !important;
+    /* Всегда в строку */
+    margin-left: auto;
+    /* Прижимаем вправо */
     align-items: center;
-    gap: 10px; /* Отступ между кнопками */
+    gap: 10px;
+    /* Отступ между кнопками */
 }
 
 .nav-link {
@@ -78,10 +96,12 @@ a { text-decoration: none !important; }
     padding: 8px 15px !important;
     border-radius: 12px;
     transition: all 0.2s;
-    white-space: nowrap; /* Текст не переносится */
+    white-space: nowrap;
+    /* Текст не переносится */
     display: flex;
     align-items: center;
-    flex-direction: column; /* Иконка над текстом (если есть) или просто текст */
+    flex-direction: column;
+    /* Иконка над текстом (если есть) или просто текст */
     line-height: 1.2;
 }
 
@@ -94,14 +114,17 @@ a { text-decoration: none !important; }
 /* --- ИСПРАВЛЕНИЕ ПОИСКА --- */
 .navbar form {
     display: flex !important;
-    flex-wrap: nowrap !important; /* Запрещаем разрыв строки */
+    flex-wrap: nowrap !important;
+    /* Запрещаем разрыв строки */
     align-items: center;
-    margin-right: auto; /* Поиск будет слева, сразу после лого */
+    margin-right: auto;
+    /* Поиск будет слева, сразу после лого */
     margin-left: 0;
 }
 
 .input-search {
-    width: 280px !important; /* Фиксируем ширину, чтобы не растягивалось */
+    width: 280px !important;
+    /* Фиксируем ширину, чтобы не растягивалось */
     height: 40px;
     background: #f1f3f5;
     border: 1px solid transparent;
@@ -133,7 +156,8 @@ a { text-decoration: none !important; }
 }
 
 .btn-search:hover {
-    background: #304ffe; /* Чуть темнее при наведении */
+    background: #304ffe;
+    /* Чуть темнее при наведении */
 }
 
 .btn-search i {
@@ -161,14 +185,19 @@ a { text-decoration: none !important; }
     padding: 20px;
 }
 
-.card-body { padding: 25px; }
+.card-body {
+    padding: 25px;
+}
 
 /* Иконки в Вики */
 .wiki-icon-box {
-    width: 60px; height: 60px;
+    width: 60px;
+    height: 60px;
     background: rgba(67, 97, 238, 0.1);
     border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--primary-color);
     margin-right: 20px;
 }
@@ -187,32 +216,69 @@ a { text-decoration: none !important; }
 }
 
 .tree ul {
-    padding-top: 20px; position: relative;
-    display: flex; justify-content: center;
+    padding-top: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .tree li {
-    float: left; text-align: center;
+    float: left;
+    text-align: center;
     list-style-type: none;
     position: relative;
     padding: 20px 10px 0 10px;
 }
 
 /* Линии дерева */
-.tree li::before, .tree li::after {
-    content: ''; position: absolute; top: 0; right: 50%;
+.tree li::before,
+.tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
     border-top: 2px solid #cbd5e1;
-    width: 50%; height: 20px;
+    width: 50%;
+    height: 20px;
 }
-.tree li::after { right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
-.tree li:only-child::after, .tree li:only-child::before { display: none; }
-.tree li:only-child { padding-top: 0; }
-.tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
-.tree li:last-child::before { border-right: 2px solid #cbd5e1; border-radius: 0 10px 0 0; }
-.tree li:first-child::after { border-radius: 10px 0 0 0; }
+
+.tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 2px solid #cbd5e1;
+}
+
+.tree li:only-child::after,
+.tree li:only-child::before {
+    display: none;
+}
+
+.tree li:only-child {
+    padding-top: 0;
+}
+
+.tree li:first-child::before,
+.tree li:last-child::after {
+    border: 0 none;
+}
+
+.tree li:last-child::before {
+    border-right: 2px solid #cbd5e1;
+    border-radius: 0 10px 0 0;
+}
+
+.tree li:first-child::after {
+    border-radius: 10px 0 0 0;
+}
+
 .tree ul ul::before {
-    content: ''; position: absolute; top: 0; left: 50%;
-    border-left: 2px solid #cbd5e1; width: 0; height: 20px;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid #cbd5e1;
+    width: 0;
+    height: 20px;
 }
 
 /* Карточка сотрудника */
@@ -220,10 +286,11 @@ a { text-decoration: none !important; }
     background: white;
     border: 1px solid #f0f0f0;
     padding: 15px 25px;
-    border-radius: 50px; /* Полный овал */
+    border-radius: 50px;
+    /* Полный овал */
     display: inline-block;
     min-width: 180px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
     z-index: 2;
@@ -243,6 +310,7 @@ a { text-decoration: none !important; }
     color: var(--text-main);
     display: block;
 }
+
 .tree-card .pos {
     font-size: 12px;
     color: var(--text-muted);
@@ -252,25 +320,33 @@ a { text-decoration: none !important; }
 }
 
 /* При наведении меняем цвет текста на белый */
-.tree-card:hover .name, 
-.tree-card:hover .pos { color: white; }
+.tree-card:hover .name,
+.tree-card:hover .pos {
+    color: white;
+}
 
 /* ГЛАВНЫЙ УЗЕЛ (Директор) - выделяем его */
-.tree > ul > li > .tree-card {
+.tree>ul>li>.tree-card {
     background: var(--primary-gradient);
     border: none;
 }
-.tree > ul > li > .tree-card .name,
-.tree > ul > li > .tree-card .pos { color: white; }
+
+.tree>ul>li>.tree-card .name,
+.tree>ul>li>.tree-card .pos {
+    color: white;
+}
 
 /* --- КОМПАКТНЫЙ ВИД ДЛЯ БОЛЬШИХ ОТДЕЛОВ --- */
 
 /* Контейнер сетки (включается, если людей много) */
 .tree ul.grid-view {
     display: flex;
-    flex-wrap: wrap;          /* Разрешаем перенос на следующую строку */
-    justify-content: center;  /* Центрируем */
-    max-width: 1000px;        /* Ограничиваем ширину, чтобы не растягивалось */
+    flex-wrap: wrap;
+    /* Разрешаем перенос на следующую строку */
+    justify-content: center;
+    /* Центрируем */
+    max-width: 1000px;
+    /* Ограничиваем ширину, чтобы не растягивалось */
     margin: 20px auto 0;
     padding-top: 0;
     position: relative;
@@ -278,19 +354,22 @@ a { text-decoration: none !important; }
 
 /* Вертикальная линия от начальника к группе */
 .tree ul.grid-view::before {
-    display: block;           /* Оставляем только одну линию сверху */
+    display: block;
+    /* Оставляем только одну линию сверху */
     height: 20px;
 }
 
 /* Элементы внутри сетки */
 .tree ul.grid-view li {
     float: none;
-    flex: 0 0 auto;           /* Карточки не растягиваются */
-    padding: 10px;            /* Отступы между карточками */
+    flex: 0 0 auto;
+    /* Карточки не растягиваются */
+    padding: 10px;
+    /* Отступы между карточками */
 }
 
 /* УБИРАЕМ лишние соединительные линии внутри сетки */
-.tree ul.grid-view li::before, 
+.tree ul.grid-view li::before,
 .tree ul.grid-view li::after {
     display: none !important;
 }
@@ -299,5 +378,174 @@ a { text-decoration: none !important; }
 .tree ul.grid-view .tree-card {
     min-width: 140px;
     padding: 10px 15px;
-    transform: scale(0.95); /* Чуть меньше обычных */
+    transform: scale(0.95);
+    /* Чуть меньше обычных */
+}
+
+/* ========================================
+   DARK MODE
+======================================== */
+
+body.dark-mode {
+    --bg-color: #1a1a2e;
+    --card-bg: #16213e;
+    --text-main: #e4e4e7;
+    --text-muted: #94a3b8;
+    --primary-color: #6366f1;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+/* Навигация в темной теме */
+body.dark-mode .navbar {
+    background: rgba(22, 33, 62, 0.95) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .navbar-brand {
+    color: #818cf8 !important;
+}
+
+body.dark-mode .nav-link {
+    color: var(--text-main) !important;
+}
+
+body.dark-mode .nav-link:hover {
+    background-color: rgba(99, 102, 241, 0.2);
+    color: #818cf8 !important;
+}
+
+/* Поиск в темной теме */
+body.dark-mode .input-search {
+    background: #0f172a;
+    color: var(--text-main);
+    border-color: #334155;
+}
+
+body.dark-mode .input-search:focus {
+    background: #1e293b;
+    border-color: var(--primary-color);
+}
+
+body.dark-mode .input-search::placeholder {
+    color: #64748b;
+}
+
+/* Карточки в темной теме */
+body.dark-mode .card {
+    background: var(--card-bg);
+    color: var(--text-main);
+    border-color: #1e293b;
+}
+
+body.dark-mode .card-header {
+    background: #0f172a;
+    border-bottom-color: #334155;
+}
+
+/* Дерево сотрудников в темной теме */
+body.dark-mode .tree-container {
+    background: var(--card-bg);
+    background-image: radial-gradient(#334155 1px, transparent 1px);
+}
+
+body.dark-mode .tree-card {
+    background: #0f172a;
+    border-color: #334155;
+    color: var(--text-main);
+}
+
+body.dark-mode .tree-card .name,
+body.dark-mode .tree-card .pos {
+    color: var(--text-main);
+}
+
+body.dark-mode .tree-card .pos {
+    color: var(--text-muted);
+}
+
+body.dark-mode .tree-card:hover {
+    background: var(--primary-color);
+}
+
+body.dark-mode .tree-card:hover .name,
+body.dark-mode .tree-card:hover .pos {
+    color: white;
+}
+
+/* Линии дерева в темной теме */
+body.dark-mode .tree li::before,
+body.dark-mode .tree li::after,
+body.dark-mode .tree ul ul::before {
+    border-color: #334155;
+}
+
+/* Футер в темной теме */
+body.dark-mode footer {
+    color: var(--text-muted);
+}
+
+/* Алерты в темной теме */
+body.dark-mode .alert {
+    background: #0f172a;
+    border-color: #334155;
+    color: var(--text-main);
+}
+
+/* Формы в темной теме */
+body.dark-mode .form-control {
+    background: #0f172a;
+    border-color: #334155;
+    color: var(--text-main);
+}
+
+body.dark-mode .form-control:focus {
+    background: #1e293b;
+    border-color: var(--primary-color);
+    color: var(--text-main);
+}
+
+/* НОВОЕ: Блок именинников */
+body.dark-mode .bg-white {
+    background: #0f172a !important;
+    color: var(--text-main);
+}
+
+body.dark-mode .text-muted {
+    color: var(--text-muted) !important;
+}
+
+body.dark-mode .shadow-sm {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* НОВОЕ: База знаний */
+body.dark-mode .article-content {
+    color: var(--text-main) !important;
+}
+
+body.dark-mode .text-primary {
+    color: #818cf8 !important;
+}
+
+body.dark-mode .text-dark {
+    color: var(--text-main) !important;
+}
+
+body.dark-mode .bg-light {
+    background: #0f172a !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode .text-secondary {
+    color: var(--text-muted) !important;
+}
+
+body.dark-mode .border {
+    border-color: #334155 !important;
+}
+
+body.dark-mode .card-footer {
+    background: #0f172a;
+    border-top-color: #334155;
 }

@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-4 mb-4">
+		<!-- Карточка профиля -->
+		<div class="card text-center"
+			style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+			<div class="card-body py-5">
+				<div class="mb-3"
+					style="width: 100px; height: 100px; background: white; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: bold; color: #667eea;">
+					{{ user.username[0].upper() }}
+				</div>
+				<h4 class="mb-2">{{ user.employee.name if user.employee else user.username }}</h4>
+				<p class="mb-1 opacity-75">{{ user.employee.position if user.employee else 'Сотрудник' }}</p>
+				<p class="mb-0 small opacity-75">
+					<i class="fa fa-calendar"></i> Регистрация: {{ user.created_at.strftime('%d.%m.%Y') }}
+				</p>
+			</div>
+		</div>
+
+		<!-- Информация -->
+		<div class="card mt-3">
+			<div class="card-body">
+				<h6 class="font-weight-bold mb-3">📋 Информация</h6>
+				<p class="mb-2">
+					<strong>Логин:</strong> {{ user.username }}
+				</p>
+				<p class="mb-2">
+					<strong>Роль:</strong>
+					{% if user.role == 'admin' %}
+					<span class="badge badge-danger">Администратор</span>
+					{% elif user.role == 'manager' %}
+					<span class="badge badge-warning">Менеджер</span>
+					{% else %}
+					<span class="badge badge-primary">Сотрудник</span>
+					{% endif %}
+				</p>
+				{% if user.last_login %}
+				<p class="mb-0">
+					<strong>Последний вход:</strong><br>
+					<small class="text-muted">{{ user.last_login.strftime('%d.%m.%Y %H:%M') }}</small>
+				</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-8">
+		<!-- Приветствие -->
+		<div class="card mb-4">
+			<div class="card-body">
+				<h3 class="mb-3">👋 Привет, {{ user.employee.name.split()[0] if user.employee else user.username }}!
+				</h3>
+				<p class="text-muted mb-0">Добро пожаловать в личный кабинет корпоративного портала.</p>
+			</div>
+		</div>
+
+		<!-- Быстрые действия -->
+		<div class="card mb-4">
+			<div class="card-header">
+				<h5 class="mb-0">⚡ Быстрые действия</h5>
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<a href="{{ url_for('home') }}" class="btn btn-outline-primary btn-block"
+							style="padding: 15px;">
+							<i class="fa fa-sitemap"></i><br>
+							<small>Структура компании</small>
+						</a>
+					</div>
+					<div class="col-md-6 mb-3">
+						<a href="{{ url_for('wiki') }}" class="btn btn-outline-primary btn-block"
+							style="padding: 15px;">
+							<i class="fa fa-book"></i><br>
+							<small>База знаний</small>
+						</a>
+					</div>
+					<div class="col-md-6 mb-3">
+						<a href="{{ url_for('feedback') }}" class="btn btn-outline-primary btn-block"
+							style="padding: 15px;">
+							<i class="fa fa-comment"></i><br>
+							<small>Обратная связь</small>
+						</a>
+					</div>
+					<div class="col-md-6 mb-3">
+						<a href="{{ url_for('search') }}" class="btn btn-outline-primary btn-block"
+							style="padding: 15px;">
+							<i class="fa fa-search"></i><br>
+							<small>Поиск</small>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Контактная информация -->
+		{% if user.employee %}
+		<div class="card">
+			<div class="card-header">
+				<h5 class="mb-0">📞 Контактная информация</h5>
+			</div>
+			<div class="card-body">
+				{% if user.employee.email %}
+				<p class="mb-2">
+					<i class="fa fa-envelope text-primary"></i>
+					<a href="mailto:{{ user.employee.email }}">{{ user.employee.email }}</a>
+				</p>
+				{% endif %}
+
+				{% if user.employee.telegram %}
+				<p class="mb-2">
+					<i class="fa fa-telegram text-info"></i>
+					<a href="https://t.me/{{ user.employee.telegram.replace('@', '') }}" target="_blank">
+						{{ user.employee.telegram if user.employee.telegram.startswith('@') else '@' +
+						user.employee.telegram }}
+					</a>
+				</p>
+				{% endif %}
+
+				{% if user.employee.birthday %}
+				<p class="mb-0">
+					<i class="fa fa-birthday-cake text-warning"></i>
+					День рождения: {{ user.employee.birthday.strftime('%d.%m') }}
+				</p>
+				{% endif %}
+
+				{% if not user.employee.email and not user.employee.telegram and not user.employee.birthday %}
+				<p class="text-muted mb-0">Контактная информация не заполнена</p>
+				{% endif %}
+			</div>
+		</div>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}
