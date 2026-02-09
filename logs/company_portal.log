@@ -1392,3 +1392,7 @@ jinja2.exceptions.TemplateNotFound: achievements.html
 [2026-02-09 15:06:39,019] INFO in logger: ==================================================
 [2026-02-09 15:06:44,045] INFO in app: Page not found (404): http://127.0.0.1:5000/favicon.ico
 [2026-02-09 15:06:44,056] INFO in app: Page not found (404): http://127.0.0.1:5000/favicon.ico
+[2026-02-09 15:40:36,070] WARNING in app: Неудачная попытка входа: admin
+[2026-02-09 15:41:00,393] INFO in app: Создан новый пользователь: admin2
+[2026-02-09 15:41:08,752] INFO in app: Успешный вход: admin2 (IP: 127.0.0.1)
+[2026-02-09 15:41:23,079] INFO in app: Пароль изменен: admin2
