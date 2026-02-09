@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-4">
+	<div class="col-12">
+		<div class="card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
+			<div class="card-body text-center py-5">
+				<h1 class="mb-2">🏆 Доска лидеров</h1>
+				<p class="mb-0 opacity-75">Топ сотрудников по количеству очков</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% if my_points %}
+<div class="row mb-4">
+	<div class="col-12">
+		<div class="card border-primary">
+			<div class="card-body">
+				<div class="row align-items-center">
+					<div class="col-md-3 text-center">
+						<h1 style="font-size: 4rem;">{{ '#%d' % my_rank }}</h1>
+						<p class="text-muted mb-0">Ваша позиция</p>
+					</div>
+					<div class="col-md-3 text-center">
+						<h2>⭐ {{ my_points.total_points }}</h2>
+						<p class="text-muted mb-0">Очков</p>
+					</div>
+					<div class="col-md-3 text-center">
+						<h2>🏆 {{ my_points.current_level }}</h2>
+						<p class="text-muted mb-0">Уровень</p>
+					</div>
+					<div class="col-md-3 text-center">
+						<h2>✅ {{ my_points.tasks_completed }}</h2>
+						<p class="text-muted mb-0">Задач</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-body p-0">
+				<div class="table-responsive">
+					<table class="table table-hover mb-0">
+						<thead class="thead-light">
+							<tr>
+								<th style="width: 80px;">Место</th>
+								<th>Сотрудник</th>
+								<th class="text-center">Очки</th>
+								<th class="text-center">Уровень</th>
+								<th class="text-center">Задач выполнено</th>
+								<th class="text-center">Достижений</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for user in all_users %}
+							<tr {% if user.user_id==current_user.id %}class="table-primary" {% endif %}>
+								<td class="text-center">
+									<h4 class="mb-0">
+										{% if loop.index == 1 %}🥇
+										{% elif loop.index == 2 %}🥈
+										{% elif loop.index == 3 %}🥉
+										{% else %}#{{ loop.index }}
+										{% endif %}
+									</h4>
+								</td>
+								<td>
+									<strong>{{ user.user.employee.name if user.user.employee else user.user.username
+										}}</strong>
+									{% if user.user.employee %}
+									<br><small class="text-muted">{{ user.user.employee.position }}</small>
+									{% endif %}
+								</td>
+								<td class="text-center">
+									<span class="badge badge-primary" style="font-size: 1rem; padding: 8px 12px;">
+										{{ user.total_points }}
+									</span>
+								</td>
+								<td class="text-center">
+									<span class="badge badge-warning" style="font-size: 1rem; padding: 8px 12px;">
+										{{ user.current_level }}
+									</span>
+								</td>
+								<td class="text-center">{{ user.tasks_completed }}</td>
+								<td class="text-center">{{ user.achievements_earned }}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

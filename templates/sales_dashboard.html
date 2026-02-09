@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-4">
+	<div class="col-12">
+		<div class="card text-white" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+			<div class="card-body">
+				<div class="row align-items-center">
+					<div class="col-md-8">
+						<h2 class="mb-2">🎮 Игровой дашборд продаж</h2>
+						<p class="mb-0" style="opacity: 0.75;">
+							Привет, {{ current_user.employee.name.split()[0] if current_user.employee else
+							current_user.username }}!
+							Вот твой прогресс и задачи на сегодня.
+						</p>
+					</div>
+					<div class="col-md-4 text-right">
+						<h1 class="mb-0" style="font-size: 3rem;">⭐ {{ user_points.total_points }}</h1>
+						<p class="mb-0">Всего очков</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row mb-4">
+	<!-- Уровень -->
+	<div class="col-md-3 col-sm-6 mb-3">
+		<div class="card text-center h-100">
+			<div class="card-body">
+				<h1 style="font-size: 3rem; margin-bottom: 10px;">🏆</h1>
+				<h3 class="mb-1">Уровень {{ user_points.current_level }}</h3>
+				<small class="text-muted">До следующего: {{ user_points.get_progress_to_next_level() }}/100</small>
+				<div class="progress mt-2" style="height: 8px;">
+					<div class="progress-bar bg-warning"
+						style="width: {{ user_points.get_progress_to_next_level() }}%;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Задачи выполнено -->
+	<div class="col-md-3 col-sm-6 mb-3">
+		<div class="card text-center h-100">
+			<div class="card-body">
+				<h1 style="font-size: 3rem; margin-bottom: 10px;">✅</h1>
+				<h3 class="mb-1">{{ user_points.tasks_completed }}</h3>
+				<small class="text-muted">Задач выполнено</small>
+			</div>
+		</div>
+	</div>
+
+	<!-- Достижения -->
+	<div class="col-md-3 col-sm-6 mb-3">
+		<div class="card text-center h-100">
+			<div class="card-body">
+				<h1 style="font-size: 3rem; margin-bottom: 10px;">🎖️</h1>
+				<h3 class="mb-1">{{ user_points.achievements_earned }}</h3>
+				<small class="text-muted">Достижений получено</small>
+			</div>
+		</div>
+	</div>
+
+	<!-- Позиция в рейтинге -->
+	<div class="col-md-3 col-sm-6 mb-3">
+		<div class="card text-center h-100">
+			<div class="card-body">
+				<h1 style="font-size: 3rem; margin-bottom: 10px;">📊</h1>
+				<h3 class="mb-1">
+					{% set my_rank = namespace(value=0) %}
+					{% for user in top_users %}
+					{% if user.user_id == current_user.id %}
+					{% set my_rank.value = loop.index %}
+					{% endif %}
+					{% endfor %}
+					#{{ my_rank.value if my_rank.value > 0 else '?' }}
+				</h3>
+				<small class="text-muted">Место в рейтинге</small>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Активные задачи -->
+<div class="row">
+	<div class="col-lg-8 mb-4">
+		<div class="card">
+			<div class="card-header d-flex justify-content-between align-items-center">
+				<h5 class="mb-0">📋 Активные задачи</h5>
+				<span class="badge badge-primary">{{ active_tasks|length }}</span>
+			</div>
+			<div class="card-body">
+				{% if active_tasks %}
+				{% for task in active_tasks %}
+				{% set progress = user_progress[task.id] %}
+				<div class="mb-4 pb-3 {% if not loop.last %}border-bottom{% endif %}">
+					<div class="d-flex justify-content-between align-items-start mb-2">
+						<div>
+							<h6 class="mb-1">
+								{{ task.get_type_display() }} {{ task.title }}
+								{% if progress.is_completed %}
+								<span class="badge badge-success ml-2">✓ Выполнено</span>
+								{% endif %}
+							</h6>
+							<small class="text-muted">
+								{{ task.get_period_display() }} •
+								Награда: <strong>+{{ task.reward_points }} очков</strong>
+							</small>
+						</div>
+						<h4 class="mb-0 {% if progress.is_completed %}text-success{% endif %}">
+							{{ progress.current_value }}/{{ task.target_value }}
+						</h4>
+					</div>
+
+					{% if task.description %}
+					<p class="small text-muted mb-2">{{ task.description }}</p>
+					{% endif %}
+
+					<div class="progress" style="height: 20px;">
+						<div class="progress-bar {% if progress.is_completed %}bg-success{% else %}bg-primary{% endif %}"
+							style="width: {{ progress.get_progress_percent() }}%;">
+							{{ progress.get_progress_percent() }}%
+						</div>
+					</div>
+
+					<div class="mt-2 small text-muted">
+						Период: {{ progress.period_start.strftime('%d.%m') }} - {{
+						progress.period_end.strftime('%d.%m.%Y') }}
+						{% if progress.last_updated %}
+						• Обновлено: {{ progress.last_updated.strftime('%d.%m.%Y %H:%M') }}
+						{% if progress.updated_by %}
+						({{ progress.updated_by.employee.name if progress.updated_by.employee else
+						progress.updated_by.username }})
+						{% endif %}
+						{% endif %}
+					</div>
+				</div>
+				{% endfor %}
+				{% else %}
+				<div class="text-center py-5 text-muted">
+					<i class="fa fa-tasks fa-3x mb-3"></i>
+					<p>Активных задач пока нет</p>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-4">
+		<!-- Топ-5 -->
+		<div class="card mb-4">
+			<div class="card-header">
+				<h5 class="mb-0">🏆 Топ-5 сотрудников</h5>
+			</div>
+			<div class="card-body p-0">
+				<div class="list-group list-group-flush">
+					{% for user in top_users %}
+					<div class="list-group-item {% if user.user_id == current_user.id %}bg-light{% endif %}">
+						<div class="d-flex justify-content-between align-items-center">
+							<div>
+								<span class="font-weight-bold mr-2">
+									{% if loop.index == 1 %}🥇
+									{% elif loop.index == 2 %}🥈
+									{% elif loop.index == 3 %}🥉
+									{% else %}#{{ loop.index }}
+									{% endif %}
+								</span>
+								<strong>{{ user.user.employee.name if user.user.employee else user.user.username
+									}}</strong>
+							</div>
+							<span class="badge badge-primary">{{ user.total_points }} pts</span>
+						</div>
+						<small class="text-muted">Уровень {{ user.current_level }}</small>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="card-footer text-center">
+				<a href="{{ url_for('leaderboard') }}" class="btn btn-sm btn-outline-primary">
+					Полный рейтинг →
+				</a>
+			</div>
+		</div>
+
+		<!-- Последние достижения -->
+		<div class="card">
+			<div class="card-header">
+				<h5 class="mb-0">🎖️ Мои достижения</h5>
+			</div>
+			<div class="card-body">
+				{% if my_achievements %}
+				{% for ua in my_achievements %}
+				<div class="mb-3 pb-2 {% if not loop.last %}border-bottom{% endif %}">
+					<h4 class="mb-1">{{ ua.achievement.icon }} {{ ua.achievement.title }}</h4>
+					<small class="text-muted">
+						{{ ua.earned_at.strftime('%d.%m.%Y') }} • +{{ ua.achievement.reward_points }} pts
+					</small>
+				</div>
+				{% endfor %}
+				{% else %}
+				<div class="text-center text-muted">
+					<p class="mb-0">Достижений пока нет</p>
+				</div>
+				{% endif %}
+			</div>
+			<div class="card-footer text-center">
+				<a href="{{ url_for('achievements') }}" class="btn btn-sm btn-outline-primary">
+					Все достижения →
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

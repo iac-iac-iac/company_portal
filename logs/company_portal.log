@@ -1235,3 +1235,136 @@ Traceback (most recent call last):
     for k, v in flags.items():
                 ^^^^^^^^^^^
 AttributeError: 'tuple' object has no attribute 'items'
+[2026-02-09 13:39:10,975] INFO in logger: ==================================================
+[2026-02-09 13:39:10,975] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:39:10,976] INFO in logger: ==================================================
+[2026-02-09 13:40:47,035] INFO in logger: ==================================================
+[2026-02-09 13:40:47,036] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:40:47,036] INFO in logger: ==================================================
+[2026-02-09 13:41:12,293] INFO in app: Создан пользователь: iac
+[2026-02-09 13:41:19,823] INFO in app: Выход: admin
+[2026-02-09 13:41:24,003] INFO in app: Успешный вход: iac
+[2026-02-09 13:44:05,009] INFO in logger: ==================================================
+[2026-02-09 13:44:05,009] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:44:05,010] INFO in logger: ==================================================
+[2026-02-09 13:44:10,836] INFO in logger: ==================================================
+[2026-02-09 13:44:10,837] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:44:10,838] INFO in logger: ==================================================
+[2026-02-09 13:46:54,895] INFO in logger: ==================================================
+[2026-02-09 13:46:54,896] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:46:54,897] INFO in logger: ==================================================
+[2026-02-09 13:47:00,853] INFO in logger: ==================================================
+[2026-02-09 13:47:00,854] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:47:00,856] INFO in logger: ==================================================
+[2026-02-09 13:47:09,206] INFO in logger: ==================================================
+[2026-02-09 13:47:09,221] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:47:09,249] INFO in logger: ==================================================
+[2026-02-09 13:47:15,790] INFO in app: Выход: iac
+[2026-02-09 13:47:23,108] INFO in app: Успешный вход: iac
+[2026-02-09 13:47:35,359] INFO in app: Пароль изменен: iac
+[2026-02-09 13:47:39,341] INFO in app: Выход: iac
+[2026-02-09 13:47:48,609] INFO in app: Успешный вход: iac
+[2026-02-09 13:47:58,560] INFO in app: Выход: iac
+[2026-02-09 13:48:02,578] INFO in app: Успешный вход: admin
+[2026-02-09 13:49:21,019] INFO in app: Выход: admin
+[2026-02-09 13:49:26,825] INFO in app: Успешный вход: admin
+[2026-02-09 13:51:39,924] INFO in logger: ==================================================
+[2026-02-09 13:51:39,925] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:51:39,926] INFO in logger: ==================================================
+[2026-02-09 13:54:45,150] INFO in logger: ==================================================
+[2026-02-09 13:54:45,151] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:54:45,151] INFO in logger: ==================================================
+[2026-02-09 13:54:49,530] INFO in logger: ==================================================
+[2026-02-09 13:54:49,531] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:54:49,534] INFO in logger: ==================================================
+[2026-02-09 13:54:57,002] INFO in logger: ==================================================
+[2026-02-09 13:54:57,004] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:54:57,006] INFO in logger: ==================================================
+[2026-02-09 13:55:14,932] WARNING in app: Пароль сброшен админом для: iac
+[2026-02-09 13:55:33,253] INFO in app: Выход: admin
+[2026-02-09 13:55:39,813] INFO in app: Успешный вход: iac
+[2026-02-09 13:55:53,036] INFO in app: Пароль изменен: iac
+[2026-02-09 13:59:23,240] INFO in logger: ==================================================
+[2026-02-09 13:59:23,241] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:59:23,242] INFO in logger: ==================================================
+[2026-02-09 13:59:27,736] INFO in logger: ==================================================
+[2026-02-09 13:59:27,737] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:59:27,739] INFO in logger: ==================================================
+[2026-02-09 13:59:41,830] INFO in logger: ==================================================
+[2026-02-09 13:59:41,830] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:59:41,831] INFO in logger: ==================================================
+[2026-02-09 13:59:46,464] INFO in logger: ==================================================
+[2026-02-09 13:59:46,465] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 13:59:46,468] INFO in logger: ==================================================
+[2026-02-09 14:01:41,475] INFO in logger: ==================================================
+[2026-02-09 14:01:41,476] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 14:01:41,477] INFO in logger: ==================================================
+[2026-02-09 14:01:47,097] INFO in logger: ==================================================
+[2026-02-09 14:01:47,097] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 14:01:47,099] INFO in logger: ==================================================
+[2026-02-09 14:02:15,713] INFO in logger: ==================================================
+[2026-02-09 14:02:15,714] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 14:02:15,714] INFO in logger: ==================================================
+[2026-02-09 14:02:18,346] INFO in app: Выход: iac
+[2026-02-09 14:02:26,315] INFO in app: Успешный вход: iac (IP: 127.0.0.1)
+[2026-02-09 14:09:41,749] INFO in logger: ==================================================
+[2026-02-09 14:09:41,750] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 14:09:41,752] INFO in logger: ==================================================
+[2026-02-09 14:09:47,148] INFO in logger: ==================================================
+[2026-02-09 14:09:47,149] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 14:09:47,151] INFO in logger: ==================================================
+[2026-02-09 14:11:06,727] INFO in logger: ==================================================
+[2026-02-09 14:11:06,728] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 14:11:06,729] INFO in logger: ==================================================
+[2026-02-09 14:11:09,454] INFO in logger: ==================================================
+[2026-02-09 14:11:09,455] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 14:11:09,456] INFO in logger: ==================================================
+[2026-02-09 14:11:24,476] INFO in logger: ==================================================
+[2026-02-09 14:11:24,478] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 14:11:24,478] INFO in logger: ==================================================
+[2026-02-09 14:11:43,392] INFO in app: Выход: iac
+[2026-02-09 14:11:47,452] INFO in app: Успешный вход: admin (IP: 127.0.0.1)
+[2026-02-09 14:16:13,374] INFO in logger: ==================================================
+[2026-02-09 14:16:13,375] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 14:16:13,376] INFO in logger: ==================================================
+[2026-02-09 14:27:14,264] INFO in logger: ==================================================
+[2026-02-09 14:27:14,265] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 14:27:14,267] INFO in logger: ==================================================
+[2026-02-09 14:28:24,944] CRITICAL in app: Unhandled exception: achievements.html
+Traceback (most recent call last):
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\Documents\DIRECT-LINE\company_portal\app.py", line 1081, in achievements
+    return render_template('achievements.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 151, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\direct01\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: achievements.html
+[2026-02-09 14:39:28,017] INFO in logger: ==================================================
+[2026-02-09 14:39:28,017] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 14:39:28,019] INFO in logger: ==================================================

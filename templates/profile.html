@@ -21,8 +21,10 @@
 
 		<!-- Информация -->
 		<div class="card mt-3">
+			<div class="card-header">
+				<h6 class="font-weight-bold mb-0">📋 Информация</h6>
+			</div>
 			<div class="card-body">
-				<h6 class="font-weight-bold mb-3">📋 Информация</h6>
 				<p class="mb-2">
 					<strong>Логин:</strong> {{ user.username }}
 				</p>
@@ -36,12 +38,44 @@
 					<span class="badge badge-primary">Сотрудник</span>
 					{% endif %}
 				</p>
+
 				{% if user.last_login %}
-				<p class="mb-0">
+				<p class="mb-2">
 					<strong>Последний вход:</strong><br>
 					<small class="text-muted">{{ user.last_login.strftime('%d.%m.%Y %H:%M') }}</small>
 				</p>
 				{% endif %}
+
+				{% if user.password_changed_at %}
+				<p class="mb-0">
+					<strong>Пароль изменен:</strong><br>
+					<small class="text-muted">{{ user.password_changed_at.strftime('%d.%m.%Y %H:%M') }}</small>
+				</p>
+				{% else %}
+				<p class="mb-0">
+					<strong>Пароль:</strong><br>
+					<small class="text-warning">⚠️ Временный (требуется смена)</small>
+				</p>
+				{% endif %}
+			</div>
+		</div>
+
+		<!-- Статистика -->
+		<div class="card mt-3">
+			<div class="card-header">
+				<h6 class="font-weight-bold mb-0">📊 Статистика</h6>
+			</div>
+			<div class="card-body">
+				<p class="mb-2">
+					<strong>Всего входов:</strong>
+					<span class="badge badge-info">{{ user.login_history.count() }}</span>
+				</p>
+				<p class="mb-0">
+					<strong>Активных сеансов:</strong>
+					<span class="badge badge-success">
+						{{ user.login_history.filter_by(logout_time=None).count() }}
+					</span>
+				</p>
 			</div>
 		</div>
 	</div>
@@ -63,41 +97,125 @@
 			</div>
 			<div class="card-body">
 				<div class="row">
-					<div class="col-md-6 mb-3">
+					<div class="col-md-4 mb-3">
 						<a href="{{ url_for('home') }}" class="btn btn-outline-primary btn-block"
 							style="padding: 15px;">
 							<i class="fa fa-sitemap"></i><br>
 							<small>Структура компании</small>
 						</a>
 					</div>
-					<div class="col-md-6 mb-3">
+					<div class="col-md-4 mb-3">
 						<a href="{{ url_for('wiki') }}" class="btn btn-outline-primary btn-block"
 							style="padding: 15px;">
 							<i class="fa fa-book"></i><br>
 							<small>База знаний</small>
 						</a>
 					</div>
-					<div class="col-md-6 mb-3">
+					<div class="col-md-4 mb-3">
 						<a href="{{ url_for('feedback') }}" class="btn btn-outline-primary btn-block"
 							style="padding: 15px;">
 							<i class="fa fa-comment"></i><br>
 							<small>Обратная связь</small>
 						</a>
 					</div>
-					<div class="col-md-6 mb-3">
+					<div class="col-md-4 mb-3">
 						<a href="{{ url_for('search') }}" class="btn btn-outline-primary btn-block"
 							style="padding: 15px;">
 							<i class="fa fa-search"></i><br>
 							<small>Поиск</small>
 						</a>
 					</div>
+					<div class="col-md-4 mb-3">
+						<a href="{{ url_for('change_password') }}" class="btn btn-outline-warning btn-block"
+							style="padding: 15px;">
+							<i class="fa fa-lock"></i><br>
+							<small>Сменить пароль</small>
+						</a>
+					</div>
+					{% if user.role == 'admin' %}
+					<div class="col-md-4 mb-3">
+						<a href="/admin" target="_blank" class="btn btn-outline-danger btn-block"
+							style="padding: 15px;">
+							<i class="fa fa-cog"></i><br>
+							<small>Админка</small>
+						</a>
+					</div>
+					{% endif %}
 				</div>
+			</div>
+		</div>
+
+		<!-- История входов -->
+		<div class="card">
+			<div class="card-header">
+				<h5 class="mb-0">🕐 История входов (последние 10)</h5>
+			</div>
+			<div class="card-body p-0">
+				{% set recent_logins = user.login_history.limit(10).all() %}
+				{% if recent_logins %}
+				<div class="table-responsive">
+					<table class="table table-hover mb-0">
+						<thead class="thead-light">
+							<tr>
+								<th>Дата и время</th>
+								<th>IP адрес</th>
+								<th>Браузер</th>
+								<th>Длительность</th>
+								<th>Статус</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for login in recent_logins %}
+							<tr>
+								<td>
+									<strong>{{ login.login_time.strftime('%d.%m.%Y') }}</strong><br>
+									<small class="text-muted">{{ login.login_time.strftime('%H:%M:%S') }}</small>
+								</td>
+								<td>
+									<code>{{ login.ip_address or '—' }}</code>
+								</td>
+								<td>
+									<small class="text-muted">
+										{% if 'Chrome' in login.user_agent %}
+										<i class="fa fa-chrome text-warning"></i> Chrome
+										{% elif 'Firefox' in login.user_agent %}
+										<i class="fa fa-firefox text-danger"></i> Firefox
+										{% elif 'Safari' in login.user_agent %}
+										<i class="fa fa-safari text-primary"></i> Safari
+										{% elif 'Edge' in login.user_agent %}
+										<i class="fa fa-edge text-info"></i> Edge
+										{% else %}
+										<i class="fa fa-globe"></i> Другой
+										{% endif %}
+									</small>
+								</td>
+								<td>
+									{{ login.get_duration_str() }}
+								</td>
+								<td>
+									{% if login.logout_time %}
+									<span class="badge badge-secondary">Завершен</span>
+									{% else %}
+									<span class="badge badge-success">Активен</span>
+									{% endif %}
+								</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+				{% else %}
+				<div class="text-center py-4 text-muted">
+					<i class="fa fa-history fa-3x mb-3"></i>
+					<p>История входов пуста</p>
+				</div>
+				{% endif %}
 			</div>
 		</div>
 
 		<!-- Контактная информация -->
 		{% if user.employee %}
-		<div class="card">
+		<div class="card mt-4">
 			<div class="card-header">
 				<h5 class="mb-0">📞 Контактная информация</h5>
 			</div>
