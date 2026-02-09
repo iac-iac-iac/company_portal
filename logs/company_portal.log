@@ -79,3 +79,6 @@ TypeError: The view function for 'feedback' did not return a valid response. The
 [2026-02-09 11:34:07,590] INFO in logger: Company Portal запущен в PRODUCTION режиме
 [2026-02-09 11:34:07,592] INFO in logger: ==================================================
 [2026-02-09 11:34:19,920] INFO in app: Новое обращение от цц: Идея
+[2026-02-09 11:37:56,230] INFO in logger: ==================================================
+[2026-02-09 11:37:56,231] INFO in logger: Company Portal запущен в PRODUCTION режиме
+[2026-02-09 11:37:56,232] INFO in logger: ==================================================

@@ -33,13 +33,6 @@ TG_CHAT_ID = app.config['TG_CHAT_ID']
 
 basic_auth = BasicAuth(app)
 
-# Папка для загрузок
-UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'static', 'uploads')
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
-
-# Ограничение размера файла (16 МБ)
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 db = SQLAlchemy(app)
 csrf = CSRFProtect(app)
@@ -49,43 +42,6 @@ setup_logger(app)
 # Сжатие ответов (gzip)
 compress = Compress(app)
 # Отключаем CSRF для feedback (временно для отладки)
-
-
-@csrf.exempt  # Если добавляли
-@app.route('/feedback', methods=['GET', 'POST'])
-def feedback():
-    success = False
-    if request.method == 'POST':
-        try:
-            sender = request.form.get('sender') or "Аноним"
-            category = request.form.get('category')
-            message = request.form.get('message')
-
-            app.logger.info(f"Новое обращение от {sender}: {category}")
-
-            new_feedback = Feedback(
-                sender=sender, category=category, message=message)
-            db.session.add(new_feedback)
-            db.session.commit()
-
-            # Формируем текст для Telegram
-            tg_text = (
-                f"🔔 *Новое обращение на портале!*\n\n"
-                f"📌 *Тема:* {category}\n"
-                f"👤 *От:* {sender}\n"
-                f"📝 *Текст:* {message}"
-            )
-
-            send_telegram(tg_text)
-            success = True
-
-        except Exception as e:
-            app.logger.error(
-                f"Ошибка при обработке обратной связи: {e}", exc_info=True)
-            db.session.rollback()
-            flash('Произошла ошибка при отправке сообщения. Попробуйте позже.', 'error')
-
-    return render_template('feedback.html', success=success)
 
 
 # --- ФУНКЦИЯ ОТПРАВКИ В TELEGRAM ---
@@ -295,7 +251,7 @@ def home():
     current_month = today.month
 
     # Находим всех, у кого есть дата рождения
-    all_employees = Employee.query.filter(Employee.birthday != None).all()
+    all_employees = Employee.query.filter(Employee.birthday.is_not(None)).all()
 
     # Фильтруем тех, у кого ДР в этом месяце
     birthdays_this_month = []
@@ -332,6 +288,44 @@ def search():
         found_articles = []
 
     return render_template('search.html', q=q, employees=found_employees, articles=found_articles)
+
+# ОБРАТНАЯ СВЯЗЬ + TELEGRAM
+
+
+@app.route('/feedback', methods=['GET', 'POST'])
+def feedback():
+    success = False
+    if request.method == 'POST':
+        try:
+            sender = request.form.get('sender') or "Аноним"
+            category = request.form.get('category')
+            message = request.form.get('message')
+
+            app.logger.info(f"Новое обращение от {sender}: {category}")
+
+            new_feedback = Feedback(
+                sender=sender, category=category, message=message)
+            db.session.add(new_feedback)
+            db.session.commit()
+
+            # Формируем текст для Telegram
+            tg_text = (
+                f"🔔 *Новое обращение на портале!*\n\n"
+                f"📌 *Тема:* {category}\n"
+                f"👤 *От:* {sender}\n"
+                f"📝 *Текст:* {message}"
+            )
+
+            send_telegram(tg_text)
+            success = True
+
+        except Exception as e:
+            app.logger.error(
+                f"Ошибка при обработке обратной связи: {e}", exc_info=True)
+            db.session.rollback()
+            flash('Произошла ошибка при отправке сообщения. Попробуйте позже.', 'error')
+
+    return render_template('feedback.html', success=success)
 
 
 # ОБРАТНАЯ СВЯЗЬ + TELEGRAM
