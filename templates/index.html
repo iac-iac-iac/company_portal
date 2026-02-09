@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+{% block extra_css %}
+<!-- Стили для древа -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tree.css') }}">
+{% endblock %}
+
 {% block content %}
 
 <div class="row mb-5">
@@ -38,7 +43,8 @@
     </div>
 </div>
 {% endif %}
-<!-- НОВОЕ: Статистика -->
+
+<!-- Статистика -->
 <div class="row mb-4">
     <div class="col-md-4 mb-3">
         <div class="card border-0 shadow-sm text-center"
@@ -101,6 +107,7 @@
         </ul>
     </div>
 </div>
+
 <!-- Модальное окно с деталями сотрудника -->
 <div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -179,6 +186,9 @@
     }
 </style>
 
+{% endblock %}
+
+{% block extra_js %}
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Добавляем обработчик клика на все карточки сотрудников
@@ -289,5 +299,4 @@
             });
     }
 </script>
-
 {% endblock %}
