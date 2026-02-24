@@ -6,14 +6,10 @@ from datetime import datetime
 from dotenv import load_dotenv
 from logger import setup_logger
 from flask_migrate import Migrate
-from flask_compress import Compress
-from flask_basicauth import BasicAuth
-from flask_wtf.csrf import CSRFProtect
-from flask_admin.actions import action
 from flask_sqlalchemy import SQLAlchemy
-from flask_admin.form import FileUploadField
 from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
+from flask_admin.actions import action
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import Flask, render_template, request, flash, redirect, url_for
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
@@ -35,16 +31,10 @@ if not os.path.exists(app.config['UPLOAD_FOLDER']):
 TG_BOT_TOKEN = app.config['TG_BOT_TOKEN']
 TG_CHAT_ID = app.config['TG_CHAT_ID']
 
-basic_auth = BasicAuth(app)
-
-
 db = SQLAlchemy(app)
-csrf = CSRFProtect(app)
 migrate = Migrate(app, db)
 # Настройка логирования
 setup_logger(app)
-# Сжатие ответов (gzip)
-compress = Compress(app)
 # --- FLASK-LOGIN ---
 login_manager = LoginManager(app)
 login_manager.login_view = 'user_login'  # Куда редиректить неавторизованных
@@ -422,18 +412,19 @@ class Feedback(db.Model):
 
 class MyAdminIndexView(AdminIndexView):
     def is_accessible(self):
-        return basic_auth.authenticate()
+        # Здесь можно добавить проверку на администратора
+        return current_user.is_authenticated and current_user.role == 'admin'
 
     def inaccessible_callback(self, name, **kwargs):
-        return basic_auth.challenge()
+        return redirect(url_for('user_login'))
 
 
 class SecureModelView(ModelView):
     def is_accessible(self):
-        return basic_auth.authenticate()
+        return current_user.is_authenticated and current_user.role == 'admin'
 
     def inaccessible_callback(self, name, **kwargs):
-        return basic_auth.challenge()
+        return redirect(url_for('user_login'))
 
 
 # --- АДМИНКА ---
